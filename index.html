@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css"></link>
+  <style>
+
+  
+  
+  </style>
+</head>
+<body ng-app="myApp">
+<div ng-controller="myCtrl">
+<div class="container-fluid">
+ <nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Viva city</a>
+    </div>
+    <ul class="nav navbar-nav  navbar-right">
+      <li class="active"><a href="#">London</a></li>
+    </ul>
+  </div>
+</nav>
+</div>
+<div class="container" style="padding-top:5%;">
+<h3 style="text-align:center;">FEATURED RESTAURANTS</h3>
+<div ng-if="!name"><h2 style="text-align:center;margin-top:50px;">Loading.......</h2></div>
+<div class="row" style="padding-bottom:2%";>
+<div class="col-md-4 shadow"  ng-repeat="list in name">
+<img ng-src="{{list.images[0].url}}" class="img-specs" alt="not available" ng-if="list.images[0].url"/>
+<img ng-src="{{list.images[1].url}}" class="img-specs" alt="not available" ng-if="!list.images[0].url"/>
+
+<div class="header-specs"><h4>{{list.name}}</h4></div>
+</div> 
+</div>
+
+</div>
+</div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script src="main.js"></script>
+<script src="countryservice.js"></script>
+</body>
+</html>
